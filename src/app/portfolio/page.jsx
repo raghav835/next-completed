@@ -1,7 +1,6 @@
 "use client";
-import { motion, useScroll, useTransform } from "framer-motion";
-import Image from "next/image";
-import Link from "next/link";
+ import { motion, useScroll, useTransform } from "framer-motion";
+ import Link from "next/link";
 import { useRef } from "react";
 
 const items = [
@@ -10,7 +9,6 @@ const items = [
     color: "from-red-300 to-blue-300",
     title: "Food-Delivery-App",
     desc: "Provide a seamless food delivery experience with our user-friendly app, featuring a wide range of restaurants and fast delivery times. Users can enjoy a convenient and efficient way to order their favorite meals.",
-    img: "https://images.pexels.com/photos/18540208/pexels-photo-18540208/free-photo-of-wood-landscape-water-hill.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     link: "https://raghav-pizzadelivery.netlify.app/",
   },
   {
@@ -18,7 +16,6 @@ const items = [
     color: "from-blue-300 to-violet-300",
     title: "Movie-App",
     desc: "Discover the latest movies and TV shows with our comprehensive streaming app, offering high-quality content and a personalized viewing experience. Users can enjoy a vast library of entertainment options, tailored to their preferences.",
-    img: "https://images.pexels.com/photos/18023772/pexels-photo-18023772/free-photo-of-close-up-of-a-person-holding-a-wristwatch.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
     link: "https://raghav-movieapp.netlify.app/",
   },
   {
@@ -26,7 +23,6 @@ const items = [
     color: "from-violet-300 to-purple-300",
     title: "Hotel-Booking",
     desc: "Plan your next getaway with ease using our hotel booking platform, featuring a wide variety of accommodations and competitive rates. Users can find the perfect place to stay, whether for business or leisure, and book with confidence.",
-    img: "https://images.pexels.com/photos/6894528/pexels-photo-6894528.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
     link: "https://raghav-bookingdemo.netlify.app/",
   },
   {
@@ -34,7 +30,6 @@ const items = [
     color: "from-purple-300 to-red-300",
     title: "Sushimon Landing Page",
     desc: " Indulge in the authentic taste of sushi with our visually stunning landing page, showcasing the freshest ingredients and a variety of dishes. Users can explore the menu and learn about the restaurant's offerings.",
-    img: "https://images.pexels.com/photos/18540208/pexels-photo-18540208/free-photo-of-wood-landscape-water-hill.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     link: "https://sushimon33.netlify.app/",
   },
 ];
@@ -64,13 +59,16 @@ const PortfolioPage = () => {
                 className={`h-screen w-screen flex items-center justify-center bg-gradient-to-r ${item.color}`}
                 key={item.id}
               >
-                <div className="flex flex-col gap-8 text-white">
+                <div className="flex flex-col gap-8 text-white overflow-hidden">
                   <h1 className="text-xl font-bold md:text-4xl lg:text-6xl xl:text-8xl">
                     {item.title}
                   </h1>
-                  <div className="relative w-80 h-56 md:w-96 md:h-64 lg:w-[500px] lg:h-[350px] xl:w-[600px] xl:h-[420px]">
-                    <Image src={item.img} alt="" fill />
+                  <div className="w-80 h-56 md:w-96 md:h-64 lg:w-[500px] lg:h-[350px] xl:w-[600px] xl:h-[420px] flex items-center justify-center bg-gray-300">
+                    <p className="text-lg font-semibold text-gray-700">
+                      Portfolio
+                    </p>
                   </div>
+
                   <p className="w-80 md:w96 lg:w-[500px] lg:text-lg xl:w-[600px]">
                     {item.desc}
                   </p>
